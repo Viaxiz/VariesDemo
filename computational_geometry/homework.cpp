@@ -6,15 +6,11 @@ int main()
 {
 
     cout << "test enviroment success" <<endl;
-    cout<<"1. 测试 operator ==       2. 测试 operator +         3.测试 operator -"<<endl;
-    cout<<"4. 求两个向量的点积         5.  求向量长度              6.求两线段的夹角"<<endl;
-    cout<<"4. 求两个向量的叉乘         5.  判断两线段的方向         6.求两个点的距离"<<endl;
-    cout<<"4. 求两个向量的叉乘         5.  判断点在矩形内部         6.判断点在线段上"<<endl;
-    cout<<"4. 求点到线段的距离         5.  判断点是否在矩形内        "<<endl;
-    cout<<"4.          5.          6.求两个点的距离"<<endl;
-    cout<<"7. 两个向量的叉乘           8.  判断两线段的方向                 9.求两个点的距离"<<endl;
-    cout<<"10.               11.  求方向                 12.求两点距离"<<endl;
-    cout<<"13. 求叉乘                 14.  求方向                15.求两点距离"<<endl;
+    cout<<"1. 测试 operator ==\t\t2. 测试 operator +\t\t3.测试 operator -"<<endl;
+    cout<<"4. 求两个向量的点积\t\t5.  求向量长度\t\t\t6.求两线段的夹角"<<endl;
+    cout<<"7. 求两个向量的叉乘\t\t8.  判断两线段的方向\t\t9.求两个点的距离"<<endl;
+    cout<<"10. 求一点到直线的距离\t\t11.  判断点在矩形内部\t\t12.判断点在线段上"<<endl;
+    cout<<"13. 判断线段是否平行\t\t14.  判断线段是否相交\t\t15.判断点是否在平面内"<<endl;
     cout<<"请输入您要测试的方法序号："<<endl;
      
     int x = 0;
@@ -66,7 +62,7 @@ int main()
     }
 
     case 5:{
-        cout<<"请输入您要测试的点，默认构造起点为（0，0）的向量，并返回该向量长度："<<endl;
+        cout<<"请输入您要测试的点，默认构造以（0，0）为起点的向量，并返回该向量长度："<<endl;
         double x1,y1;
         cin>>x1>>y1;
         Point p1(x1,y1);
@@ -102,7 +98,7 @@ int main()
     }
 
      case 9:{
-        cout<<"请输入您要测试的两个点的坐标："<<endl;
+        cout<<"请依次输入您要测试的两个点的坐标："<<endl;
         double x1,x2,y1,y2;
         cin>>x1>>y1>>x2>>y2;
         Point p1(x1,y1),p2(x2,y2);
@@ -111,11 +107,11 @@ int main()
     }
 
      case 10:{
-        cout<<"请输入您要测试的三个点的坐标："<<endl;
+        cout<<"请依次输入您要测试的p0,p1,p2三个点的坐标，求p0到p1p2线的距离："<<endl;
         double x1,x2,y1,y2,x3,y3;
         cin>>x1>>y1>>x2>>y2>>x3>>y3;
         Point p1(x1,y1),p2(x2,y2),p3(x3,y3);
-        cout <<"两点相距： "<< DistPtoSegment(p1,p2,p3) <<endl;
+        cout <<"测试点(p0)到直线p1p2的距离为： "<< DistPtoSegment(p1,p2,p3) <<endl;
         break;
     }
 
@@ -124,31 +120,31 @@ int main()
         double x1,x2,y1,y2,x3,y3;
         cin>>x1>>y1>>x2>>y2>>x3>>y3;
         Point p1(x1,y1),p2(x2,y2),p3(x3,y3);
-        cout <<"p0是否在p1p2形成的平行四边形内： "<< InRectAngle(p1,p2,p3) <<endl;
+        cout <<"判断p0是否在p1p2形成的平行四边形(p1 和 p2会以（0，0）点作为起点坐标形成两个向量组成平行四边形）内： "<< InRectAngle(p1,p2,p3) <<endl;
         break;
     }
      case 12:{
-        cout<<"请输入您要测试的三个点的坐标："<<endl;
+        cout<<"请输入您要测试的三个点的坐标，判断p0是否在p1p2线段上："<<endl;
         double x1,x2,y1,y2,x3,y3;
         cin>>x1>>y1>>x2>>y2>>x3>>y3;
         Point p1(x1,y1),p2(x2,y2),p3(x3,y3);
-        cout <<"p0是否在p1p2线段上： "<< OnSegment(p1,p2,p3) <<endl;
+        cout <<" 点p0是否在p1p2线段上："<< OnSegment(p1,p2,p3) <<endl;
         break;
     }
      case 13:{
-        cout<<"请输入您要测试的四个点的坐标："<<endl;
+        cout<<"请输入您要测试的四个点的坐标，会判断p1p2线段是否和p3p4平行："<<endl;
         double x1,x2,y1,y2,x3,y3,x4,y4;
         cin>>x1>>y1>>x2>>y2>>x3>>y3>>x4>>y4;
         Point p1(x1,y1),p2(x2,y2),p3(x3,y3),p4(x4,y4);
-        cout <<"p1p2线段是否和p3p4平行： "<< Parallel(p1,p2,p3,p4) <<endl;
+        cout <<"线段p1p2是否和线段p3p4平行： "<< Parallel(p1,p2,p3,p4) <<endl;
         break;
     }
      case 14:{
-        cout<<"请输入您要测试的四个点的坐标："<<endl;
+        cout<<"请输入您要测试的四个点的坐标，会判断p1p2线段是否和p3p4相交："<<endl;
         double x1,x2,y1,y2,x3,y3,x4,y4;
         cin>>x1>>y1>>x2>>y2>>x3>>y3>>x4>>y4;
         Point p1(x1,y1),p2(x2,y2),p3(x3,y3),p4(x4,y4);
-        cout <<"p1p2线段是否和p3p4平行： "<< Parallel(p1,p2,p3,p4) <<endl;
+        cout <<"线段p1p2是否和p3p4相交： "<< Parallel(p1,p2,p3,p4) <<endl;
         break;
     }
      case 15:{

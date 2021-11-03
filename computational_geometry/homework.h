@@ -165,6 +165,10 @@ bool SegIntersect(Point p1,Point p2,Point p3,Point p4){
 
 
 bool PointInPolygon(Point p0,vector<Point> a){
+
+    
+
+
     //判断点p0是否在点集a所形成的多边形内
     return false;
 }    
